@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "engines": {
     "node": "6.11.2"
-  }
+  };
   "description": "YelpCamp",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
   };
   "author": "Chance Shirley",
   "license": "ISC",
@@ -27,6 +27,6 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
   };
 };
