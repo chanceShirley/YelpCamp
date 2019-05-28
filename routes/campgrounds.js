@@ -3,7 +3,6 @@ var router  = express.Router();
 var Campground = require("../models/campground");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
-var geocoder = require('geocoder');
 var { isLoggedIn, checkUserCampground, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
 
 // Define escapeRegex function for search feature
