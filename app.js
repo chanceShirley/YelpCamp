@@ -13,7 +13,7 @@ var express     = require("express"),
     seedDB      = require("./seeds"),
     methodOverride = require("method-override");
 // configure dotenv
-require('dotenv').config()
+require('dotenv').config();
 
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/yelp_camp';
 
-mongoose.connect(databaseUri, { useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect("mongodb+srv://chanceShirley:IKi94PsGhsrUa0Xy@cluster0-fhsac.mongodb.net/yelp_camp?retryWrites=true", { useNewUrlParser: true, useFindAndModify: false })
       .then(() => console.log(`Database connected`))
       .catch(err => console.log(`Database connection error: ${err.message}`));
 
