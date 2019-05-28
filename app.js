@@ -10,6 +10,7 @@ var express     = require("express"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     session = require("express-session"),
+    MongoStore = require("connect-mongo")(session),
     seedDB      = require("./seeds"),
     methodOverride = require("method-override");
 // configure dotenv
@@ -38,11 +39,13 @@ app.use(cookieParser('secret'));
 app.locals.moment = require('moment');
 // seedDB(); //seed the database
 
-// PASSPORT CONFIGURATION
-app.use(require("express-session")({
+// session setup
+app.use(session({
     secret: "Biggs snorts a lot",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge: 180 * 60 * 1000 } // 180 minutes session expiration
 }));
 
 app.use(flash());
